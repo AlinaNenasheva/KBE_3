@@ -1,24 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="KBE_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uQ-SI-M7n">
+                                <rect key="frame" x="98" y="92" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AgD-5J-qBw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ONTOLOGY EDITOR]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0u-4g-rMP">
+                                <rect key="frame" x="28" y="100" width="319" height="39.5"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="30"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGj-fr-xJa">
+                                <rect key="frame" x="112" y="522" width="151" height="45"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="25"/>
+                                <state key="normal" title="[LogIn...]">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="zGj-fr-xJa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FDu-kP-RkV"/>
+                            <constraint firstItem="H0u-4g-rMP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="RQA-zn-fIU"/>
+                            <constraint firstItem="H0u-4g-rMP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zbb-Oh-qll"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zGj-fr-xJa" secondAttribute="bottom" constant="100" id="wsr-Mf-T2u"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="97" y="68"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="kXT-qS-a2h">
+            <objects>
+                <viewController storyboardIdentifier="LogInViewController" modalPresentationStyle="fullScreen" id="6RN-eN-gYT" customClass="LogInViewController" customModule="KBE_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GDN-BV-oY3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aG-nN-aOy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="neo4j" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uua-Ly-sh3">
+                                        <rect key="frame" x="153" y="25" width="202" height="39"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="neo4j" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGX-mA-ShR">
+                                        <rect key="frame" x="153" y="84" width="202" height="38.5"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="7687" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wdw-zb-Xno">
+                                        <rect key="frame" x="153" y="142.5" width="202" height="39"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xI-CA-cbH">
+                                        <rect key="frame" x="115" y="260" width="145" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hwt-il-sB5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                        <state key="normal" title="[Connect..$]">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="connectButtonPressed:" destination="6RN-eN-gYT" eventType="touchUpInside" id="HrS-EI-RHC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;&gt;Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXx-7L-Cj3">
+                                        <rect key="frame" x="20" y="30" width="113" height="29"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;&gt;Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbt-2A-e9f">
+                                        <rect key="frame" x="20" y="89.5" width="113" height="27"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;&gt;Port:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H99-iL-dQB">
+                                        <rect key="frame" x="20" y="148.5" width="72" height="27"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="&gt;&gt;Hostname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLE-Fz-0lz">
+                                        <rect key="frame" x="20" y="204" width="113" height="27"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.0.106" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-f3-AQC">
+                                        <rect key="frame" x="153" y="201.5" width="202" height="38.5"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstItem="8xI-CA-cbH" firstAttribute="top" secondItem="zm2-f3-AQC" secondAttribute="bottom" constant="20" id="38L-Wp-QJc"/>
+                                    <constraint firstItem="uXx-7L-Cj3" firstAttribute="leading" secondItem="7aG-nN-aOy" secondAttribute="leading" constant="20" id="Adu-Xh-a8x"/>
+                                    <constraint firstAttribute="trailing" secondItem="AGX-mA-ShR" secondAttribute="trailing" constant="20" id="CRU-Cv-86k"/>
+                                    <constraint firstItem="H99-iL-dQB" firstAttribute="leading" secondItem="7aG-nN-aOy" secondAttribute="leading" constant="20" id="DES-rb-7G9"/>
+                                    <constraint firstItem="Uua-Ly-sh3" firstAttribute="centerY" secondItem="uXx-7L-Cj3" secondAttribute="centerY" id="E3Q-qa-N0e"/>
+                                    <constraint firstItem="AGX-mA-ShR" firstAttribute="top" secondItem="Uua-Ly-sh3" secondAttribute="bottom" constant="20" id="Eje-c2-fSL"/>
+                                    <constraint firstItem="uXx-7L-Cj3" firstAttribute="top" secondItem="7aG-nN-aOy" secondAttribute="top" constant="30" id="HIQ-Fy-Uhi"/>
+                                    <constraint firstAttribute="height" constant="300" id="IUr-RU-9qN"/>
+                                    <constraint firstItem="mbt-2A-e9f" firstAttribute="leading" secondItem="7aG-nN-aOy" secondAttribute="leading" constant="20" id="J5f-n6-8Bc"/>
+                                    <constraint firstAttribute="bottom" secondItem="8xI-CA-cbH" secondAttribute="bottom" constant="10" id="Jpa-Q7-iYR"/>
+                                    <constraint firstItem="Wdw-zb-Xno" firstAttribute="leading" secondItem="zm2-f3-AQC" secondAttribute="leading" id="Jvh-Cd-4tY"/>
+                                    <constraint firstItem="Uua-Ly-sh3" firstAttribute="top" secondItem="7aG-nN-aOy" secondAttribute="top" constant="25" id="LR9-Yj-Aw1"/>
+                                    <constraint firstItem="8xI-CA-cbH" firstAttribute="centerX" secondItem="7aG-nN-aOy" secondAttribute="centerX" id="Lt8-Sw-as6"/>
+                                    <constraint firstItem="AGX-mA-ShR" firstAttribute="leading" secondItem="Wdw-zb-Xno" secondAttribute="leading" id="S5M-dc-KzD"/>
+                                    <constraint firstItem="Uua-Ly-sh3" firstAttribute="leading" secondItem="uXx-7L-Cj3" secondAttribute="trailing" constant="20" id="SLY-NF-WEF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uua-Ly-sh3" secondAttribute="trailing" constant="20" id="XdD-oE-5kx"/>
+                                    <constraint firstItem="Wdw-zb-Xno" firstAttribute="top" secondItem="AGX-mA-ShR" secondAttribute="bottom" constant="20" id="ahr-4Q-UGD"/>
+                                    <constraint firstItem="AGX-mA-ShR" firstAttribute="centerY" secondItem="mbt-2A-e9f" secondAttribute="centerY" id="b3q-lw-Xpt"/>
+                                    <constraint firstItem="Wdw-zb-Xno" firstAttribute="centerY" secondItem="H99-iL-dQB" secondAttribute="centerY" id="dST-MT-C6d"/>
+                                    <constraint firstAttribute="trailing" secondItem="zm2-f3-AQC" secondAttribute="trailing" constant="20" id="dsA-4X-Tfi"/>
+                                    <constraint firstItem="AGX-mA-ShR" firstAttribute="height" secondItem="Wdw-zb-Xno" secondAttribute="height" id="frU-mL-yNe"/>
+                                    <constraint firstItem="Wdw-zb-Xno" firstAttribute="height" secondItem="zm2-f3-AQC" secondAttribute="height" id="k1c-jS-Odt"/>
+                                    <constraint firstItem="AGX-mA-ShR" firstAttribute="height" secondItem="Uua-Ly-sh3" secondAttribute="height" id="nYb-eh-4Xy"/>
+                                    <constraint firstItem="zm2-f3-AQC" firstAttribute="centerY" secondItem="DLE-Fz-0lz" secondAttribute="centerY" id="snc-q5-eze"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wdw-zb-Xno" secondAttribute="trailing" constant="20" id="uP1-2R-E5K"/>
+                                    <constraint firstItem="zm2-f3-AQC" firstAttribute="top" secondItem="Wdw-zb-Xno" secondAttribute="bottom" constant="20" id="xex-XH-Lbg"/>
+                                    <constraint firstItem="Uua-Ly-sh3" firstAttribute="leading" secondItem="AGX-mA-ShR" secondAttribute="leading" id="zOr-eQ-Qaz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OTu-0y-yqx"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="7aG-nN-aOy" firstAttribute="top" secondItem="OTu-0y-yqx" secondAttribute="top" id="4zH-M7-W8U"/>
+                            <constraint firstItem="7aG-nN-aOy" firstAttribute="trailing" secondItem="OTu-0y-yqx" secondAttribute="trailing" id="Fs5-RW-U0l"/>
+                            <constraint firstItem="7aG-nN-aOy" firstAttribute="leading" secondItem="OTu-0y-yqx" secondAttribute="leading" id="OYU-UZ-eAX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectionSettingsView" destination="7aG-nN-aOy" id="zgt-cm-178"/>
+                        <outlet property="hostnameTextField" destination="zm2-f3-AQC" id="pab-Kt-Fhb"/>
+                        <outlet property="passwordTextField" destination="AGX-mA-ShR" id="aG5-fh-G6c"/>
+                        <outlet property="portTextField" destination="Wdw-zb-Xno" id="4go-d0-KeF"/>
+                        <outlet property="usernameTextField" destination="Uua-Ly-sh3" id="tbQ-de-LEe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIs-4w-o27" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.95652173913049" y="61.607142857142854"/>
+        </scene>
+        <!--Ontology Maintainer View Controller-->
+        <scene sceneID="yfG-U9-uV0">
+            <objects>
+                <viewController storyboardIdentifier="OntologyMaintainerViewController" id="JhR-dB-joa" customClass="OntologyMaintainerViewController" customModule="KBE_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dwy-g5-0wa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD1-e6-7LO">
+                                <rect key="frame" x="20" y="20" width="82" height="39"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="17"/>
+                                <state key="normal" title="[&lt;&lt;Back]">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pcz-Yy-OA9"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="FD1-e6-7LO" firstAttribute="top" secondItem="Pcz-Yy-OA9" secondAttribute="top" constant="20" id="DwB-6T-CKc"/>
+                            <constraint firstItem="FD1-e6-7LO" firstAttribute="leading" secondItem="Pcz-Yy-OA9" secondAttribute="leading" constant="20" id="hS6-1N-nIv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ox-kl-t18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="62"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
